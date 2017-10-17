@@ -9,6 +9,9 @@ import java.io.IOException;
 
 public class LoginServlet extends javax.servlet.http.HttpServlet {
 
+    private final String ResponseMessageKey = "ResponseMessage";
+    private final String ResponseDataKey = "ResponseData";
+
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         System.out.println("Login Post");
         String username = request.getParameter("username");
@@ -20,14 +23,17 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
             ResponseObject<User> loginResult = loginService.Login(username, password);
             if(loginResult.getSuccess() && loginResult.getData() != null){
                 RequestDispatcher requestDispatcher =  request.getRequestDispatcher("index.jsp");
+                request.setAttribute(ResponseMessageKey,"User Logged in successfully.");
+                request.setAttribute(ResponseDataKey, loginResult.getData());
                 requestDispatcher.forward(request, response);
             }
             else{
-
+                request.setAttribute(ResponseMessageKey,"User log in failed.");
             }
         }
         catch(Exception ex){
             ex.printStackTrace();
+            request.setAttribute(ResponseMessageKey,"Error while trying to log in.");
         }
     }
 

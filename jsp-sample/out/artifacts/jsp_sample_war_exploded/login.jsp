@@ -30,6 +30,7 @@
 <div class="container">
     <form class="form-signin"  role="form" id="loginForm" action="/Login" method="post">
         <h3 class="form-signin-heading">Please sign in</h3>
+        <h5>${ResponseMessage}</h5>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">

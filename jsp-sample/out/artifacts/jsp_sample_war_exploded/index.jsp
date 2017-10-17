@@ -39,7 +39,6 @@
       </button>
       <a href="#" class="navbar-brand">${message} Bootflat-Admin</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -116,6 +115,8 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><a href="javascript:void(0);" class="toggle-sidebar"><span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel"></span></a> Panel Title</h3>
+          <h4>${ResponseMessage}</h4>
+          <h3>${ResponseData}</h3>
         </div>
         <div class="panel-body">
           <div class="content-row">
