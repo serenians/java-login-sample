@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ec84ce-a3a0-43a4-bcc5-ff365143d8c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jsp_sample_war_exploded/WEB-INF/classes/data/DbContext.class" afterPath="$PROJECT_DIR$/out/artifacts/jsp_sample_war_exploded/WEB-INF/classes/data/DbContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/jsp-sample/data/DbContext.class" afterPath="$PROJECT_DIR$/out/production/jsp-sample/data/DbContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jsp_sample_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jsp_sample_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/jsp_sample_war_exploded/WEB-INF/classes/service/LoginService.class" afterPath="$PROJECT_DIR$/out/artifacts/jsp_sample_war_exploded/WEB-INF/classes/service/LoginService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/jsp-sample/service/LoginService.class" afterPath="$PROJECT_DIR$/out/production/jsp-sample/service/LoginService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/DbContext.java" afterPath="$PROJECT_DIR$/src/data/DbContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/LoginService.java" afterPath="$PROJECT_DIR$/src/service/LoginService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,20 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DbContext.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DbContext.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/data/DbContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="83" selection-end-line="41" selection-end-column="89" />
+            <state relative-caret-position="128">
+              <caret line="41" column="82" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="352">
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -326,8 +323,8 @@
       <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/LoginService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="372">
+              <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -382,7 +379,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1128" />
     <option name="y" value="-19" />
     <option name="width" value="1937" />
@@ -653,15 +650,15 @@
       <updated>1508128995172</updated>
       <workItem from="1508129001487" duration="12527000" />
       <workItem from="1508207440410" duration="2907000" />
-      <workItem from="1508215435754" duration="2870000" />
+      <workItem from="1508215435754" duration="3061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18304000" />
+    <option name="totallyTimeSpent" value="18495000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1316" height="784" extended-state="7" />
+    <frame x="1358" y="-8" width="1316" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1391,31 +1388,31 @@
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.44-bin.jar!/com/mysql/jdbc/Driver.class" />
-    <entry file="file://$PROJECT_DIR$/src/data/DbContext.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="83" selection-end-line="41" selection-end-column="89" />
-          <folding />
+        <state relative-caret-position="352">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="372">
+          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/data/DbContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="128">
+          <caret line="41" column="82" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
