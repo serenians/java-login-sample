@@ -16,17 +16,18 @@ public class LoginService extends BaseService {
     public ResponseObject<User> Login(String username, String password) throws SQLException, ClassNotFoundException {
         ResponseObject<User> result = null;
 
-        String query = MessageFormat.format("select userid, username, lastlogindate from user where username = '{0}' and password = '{1}'", username, password).toString();
-
+//        String query = "select UserId, UserName, LastLoginDate from public.\"User\" where UserName = '"+username+"' and Password = '"+password+"'";
+        String query = "SELECT * FROM public.\"User\"";
+        System.out.println(query);
         ResultSet resultSet = context.executeQuery(query);
 
         int count = 0;
         User user = null;
         while(resultSet.next()){
             user = new User();
-            user.setUserId(resultSet.getInt(1));
-            user.setUsername(resultSet.getString(2));
-            user.setLastLoginDate(resultSet.getDate(3));
+            user.setUserId(resultSet.getInt("UserId"));
+            user.setUsername(resultSet.getString("UserName"));
+            user.setLastLoginDate(resultSet.getDate("LastLoginDate"));
 
             count ++;
         }

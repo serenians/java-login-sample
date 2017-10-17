@@ -2,13 +2,15 @@ package data;
 
 
 import java.sql.*;
+
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.mysql.jdbc.Driver;
 
 public class DbContext {
 
     //jdbc driver name and database
     static final String JDBC_Driver = "";
-//    static final String DB_Server= "jdbc:sqlserver://localhost\\sqldev:1433;databaseName=sample;user=sa;password=P@ssw0rd";
+    static final String DB_Server= "jdbc:sqlserver://localhost\\sqldev:1433;databaseName=sample;user=sa;password=P@ssw0rd";
 
     //database credentials
     static final String user = "sa";
@@ -32,9 +34,14 @@ public class DbContext {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //        connection = DriverManager.getConnection(DB_Server);
 //        statement = connection.createStatement();
-        Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "P@ssw0rd");
+//        Class.forName("com.mysql.jdbc.Driver");
+//        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "P@ssw0rd");
+//        statement = connection.createStatement();
+
+        Class.forName("org.postgresql.Driver");
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Sample", "postgres", "P@ssw0rd");
         statement = connection.createStatement();
+
 //        SQLServerDataSource ds = new SQLServerDataSource();
 //        ds.setIntegratedSecurity(true);
 //        ds.setServerName(".");
