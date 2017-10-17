@@ -16,7 +16,9 @@ public class LoginService extends BaseService {
     public ResponseObject<User> Login(String username, String password) throws SQLException, ClassNotFoundException {
         ResponseObject<User> result = null;
 
-        ResultSet resultSet = context.executeQuery(MessageFormat.format("select userid, username, lastlogindate from user where username = {0} and password = {1}", username, password).toString());
+        String query = MessageFormat.format("select userid, username, lastlogindate from user where username = '{0}' and password = '{1}'", username, password).toString();
+
+        ResultSet resultSet = context.executeQuery(query);
 
         int count = 0;
         User user = null;

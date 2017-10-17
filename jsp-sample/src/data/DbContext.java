@@ -1,14 +1,14 @@
 package data;
 
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 import java.sql.*;
+import com.mysql.jdbc.Driver;
 
 public class DbContext {
 
     //jdbc driver name and database
     static final String JDBC_Driver = "";
-    static final String DB_Server= "jdbc:sqlserver://localhost\\sqldev:1433;databaseName=sample;user=sa;password=P@ssw0rd";
+//    static final String DB_Server= "jdbc:sqlserver://localhost\\sqldev:1433;databaseName=sample;user=sa;password=P@ssw0rd";
 
     //database credentials
     static final String user = "sa";
@@ -32,17 +32,19 @@ public class DbContext {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //        connection = DriverManager.getConnection(DB_Server);
 //        statement = connection.createStatement();
-
-        SQLServerDataSource ds = new SQLServerDataSource();
-        ds.setIntegratedSecurity(true);
-        ds.setServerName(".");
-        ds.setInstanceName("sqldev");
-        ds.setPortNumber(1433);
-        ds.setDatabaseName("Sample");
-//        ds.setUser("sa");
-//        ds.setPassword("P@ssw0rd");
-        connection = ds.getConnection();
+        Class.forName("com.mysql.jdbc.Driver");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "P@ssw0rd");
         statement = connection.createStatement();
+//        SQLServerDataSource ds = new SQLServerDataSource();
+//        ds.setIntegratedSecurity(true);
+//        ds.setServerName(".");
+//        ds.setInstanceName("sqldev");
+//        ds.setPortNumber(1433);
+//        ds.setDatabaseName("Sample");
+////        ds.setUser("sa");
+////        ds.setPassword("P@ssw0rd");
+//        connection = ds.getConnection();
+//        statement = connection.createStatement();
 
     }
 

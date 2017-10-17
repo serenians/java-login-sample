@@ -37,7 +37,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">Bootflat-Admin</a>
+      <a href="#" class="navbar-brand">${message} Bootflat-Admin</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
