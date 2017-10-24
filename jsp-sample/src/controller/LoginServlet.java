@@ -24,7 +24,10 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
             if(loginResult.getSuccess() && loginResult.getData() != null){
                 RequestDispatcher requestDispatcher =  request.getRequestDispatcher("index.jsp");
                 request.setAttribute(ResponseMessageKey,"User Logged in successfully.");
-                request.setAttribute(ResponseDataKey, loginResult.getData());
+                User loggedInUser= loginResult.getData();
+                request.setAttribute(ResponseDataKey, loggedInUser);
+                request.getSession().setAttribute("loggedInUser",loggedInUser);
+
                 requestDispatcher.forward(request, response);
             }
             else{

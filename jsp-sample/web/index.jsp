@@ -70,6 +70,7 @@
         <li class="list-group-item"><i class="glyphicon glyphicon-align-justify"></i> <b>SIDE PANEL</b></li>
         <li class="list-group-item"><input type="text" class="form-control search-query" placeholder="Search Something"></li>
         <li class="list-group-item"><a href="index.html"><i class="glyphicon glyphicon-home"></i>Dashboard </a></li>
+        <li class="list-group-item"><a href="/user/profile"><i class="glyphicon glyphicon-user"></i>Profile </a></li>
         <li class="list-group-item"><a href="icons.html"><i class="glyphicon glyphicon-certificate"></i>Icons </a></li>
         <li class="list-group-item"><a href="list.html"><i class="glyphicon glyphicon-th-list"></i>Tables and List </a></li>
         <li class="list-group-item"><a href="forms.html"><i class="glyphicon glyphicon-list-alt"></i>Forms</a></li>

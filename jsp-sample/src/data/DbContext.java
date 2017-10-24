@@ -30,6 +30,7 @@ public class DbContext {
         }
         return instance;
     }
+
     private void createConnection() throws SQLException, ClassNotFoundException {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //        connection = DriverManager.getConnection(DB_Server);
