@@ -17,7 +17,8 @@ public class LoginService extends BaseService {
         ResponseObject<User> result = null;
 
 //        String query = "select UserId, UserName, LastLoginDate from public.\"User\" where UserName = '"+username+"' and Password = '"+password+"'";
-        String query = "SELECT \"UserId\",\"UserName\",\"LastLoginDate\" FROM \"User\"";
+//        String query = "SELECT \"UserId\",\"UserName\",\"LastLoginDate\" FROM \"User\"";
+        String query = "select userid, username, lastlogindate from user where username = '"+username+"' and password = '"+password+"'";
         System.out.println(query);
         ResultSet resultSet = context.executeQuery(query);
 

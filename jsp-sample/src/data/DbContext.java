@@ -34,13 +34,13 @@ public class DbContext {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //        connection = DriverManager.getConnection(DB_Server);
 //        statement = connection.createStatement();
-//        Class.forName("com.mysql.jdbc.Driver");
-//        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "P@ssw0rd");
-//        statement = connection.createStatement();
-
-        Class.forName("org.postgresql.Driver");
-        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Sample", "postgres", "P@ssw0rd");
+        Class.forName("com.mysql.jdbc.Driver");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?autoReconnect=true&useSSL=false", "root", "P@ssw0rd");
         statement = connection.createStatement();
+
+//        Class.forName("org.postgresql.Driver");
+//        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Sample", "postgres", "P@ssw0rd");
+//        statement = connection.createStatement();
 
 //        SQLServerDataSource ds = new SQLServerDataSource();
 //        ds.setIntegratedSecurity(true);
@@ -67,7 +67,7 @@ public class DbContext {
           return statement.executeQuery(query);
       }
       finally {
-        closeConnection();
+        //closeConnection();
       }
 
     }
