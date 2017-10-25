@@ -18,7 +18,7 @@ public class LoginService extends BaseService {
 
 //        String query = "select UserId, UserName, LastLoginDate from public.\"User\" where UserName = '"+username+"' and Password = '"+password+"'";
 //        String query = "SELECT \"UserId\",\"UserName\",\"LastLoginDate\" FROM \"User\"";
-        String query = "select userid, username, lastlogindate from user where username = '"+username+"' and password = '"+password+"'";
+        String query = "select userid, username, lastlogindate, firstname, lastname from user where username = '"+username+"' and password = '"+password+"'";
         System.out.println(query);
         ResultSet resultSet = context.executeQuery(query);
 
@@ -29,7 +29,8 @@ public class LoginService extends BaseService {
             user.setUserId(resultSet.getInt("UserId"));
             user.setUsername(resultSet.getString("UserName"));
             user.setLastLoginDate(resultSet.getDate("LastLoginDate"));
-
+            user.setFirstName(resultSet.getString("FirstName"));
+            user.setLastName(resultSet.getString("LastName"));
             count ++;
         }
 

@@ -9,6 +9,9 @@ public class User {
     private Boolean active;
     private Date lastLoginDate;
 
+    private String firstName;
+    private String lastName;
+
     public int getUserId() {
         return userId;
     }
@@ -47,5 +50,21 @@ public class User {
 
     public void setLastLoginDate(Date lastLoginDate) {
         this.lastLoginDate = lastLoginDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

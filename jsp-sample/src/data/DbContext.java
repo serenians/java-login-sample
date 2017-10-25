@@ -19,7 +19,7 @@ public class DbContext {
     //connection related variables
     Connection connection = null;
     Statement statement = null;
-
+    PreparedStatement preparedStatement = null;
 
     private static DbContext instance = null;
     private DbContext(){}
@@ -29,6 +29,12 @@ public class DbContext {
             instance = new DbContext();
         }
         return instance;
+    }
+
+    public PreparedStatement getPreparedStatement(String query) throws SQLException {
+        preparedStatement = instance.connection.prepareStatement(query);
+
+        return preparedStatement;
     }
 
     private void createConnection() throws SQLException, ClassNotFoundException {
@@ -77,6 +83,16 @@ public class DbContext {
         try{
             createConnection();
             return statement.executeUpdate(query);
+        }
+        finally {
+            closeConnection();
+        }
+    }
+
+    public int executeUpdate() throws SQLException, ClassNotFoundException {
+        try{
+            createConnection();
+            return preparedStatement.executeUpdate();
         }
         finally {
             closeConnection();

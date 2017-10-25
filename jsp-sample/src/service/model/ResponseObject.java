@@ -5,6 +5,10 @@ public class ResponseObject<T> {
     private T data;
     private String message;
 
+    public ResponseObject() {
+
+    }
+
     private void initialize(Boolean isSuccess, String message, T data){
         this.isSuccess = isSuccess;
         this.data = data;
