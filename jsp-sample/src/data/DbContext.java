@@ -42,7 +42,7 @@ public class DbContext {
 //        connection = DriverManager.getConnection(DB_Server);
 //        statement = connection.createStatement();
         Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?autoReconnect=true&useSSL=false", "root", "P@ssw0rd");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quiz?autoReconnect=true&useSSL=false", "root", "P@ssw0rd");
         statement = connection.createStatement();
 
 //        Class.forName("org.postgresql.Driver");

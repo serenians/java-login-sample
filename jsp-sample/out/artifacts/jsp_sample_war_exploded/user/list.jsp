@@ -28,40 +28,7 @@
 </head>
 <body>
 <!--nav-->
-<nav role="navigation" class="navbar navbar-custom">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button data-target="#bs-content-row-navbar-collapse-5" data-toggle="collapse" class="navbar-toggle" type="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand"> Slick-Admin</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="getting-started.html">Getting Started</a></li>
-                <li class="active"><a href="index.html">Documentation</a></li>
-                <!-- <li class="disabled"><a href="#">Link</a></li> -->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Silverbux <b class="caret"></b></a>
-                    <ul role="menu" class="dropdown-menu">
-                        <li class="dropdown-header">Setting</li>
-                        <li><a href="#">Action</a></li>
-                        <li class="divider"></li>
-                        <li class="active"><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li class="disabled"><a href="#">Signout</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<%@ include file="/layout/top_navigation.html"%>
 <!--header-->
 <div class="container-fluid">
     <!--documents-->
@@ -70,7 +37,7 @@
             <%@include file="/layout/navigation.html"%>
         </div>
         <div class="col-xs-12 col-sm-9 content">
-
+            ${Message}
 
             <div class ="row">
                 <div class ="col-xs-12 text-right">
@@ -95,10 +62,17 @@
                                     <div id="${user.userId}" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="content-row">
-
-                                                    ${user.firstName}
-                                                <br/>                                                        ${user.lastName}
-                                                <br/>
+                                                    ${user.firstName}<br/>${user.lastName}<br/>
+                                            </div>
+                                            <div class="content-row">
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-sm-4 col-md-2">
+                                                    <a href="/Admin/User/Edit?id=${user.userId}"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Edit </a>
+                                                </div>
+                                                    <div class="col-xs-6 col-sm-4 col-md-2">
+                                                        <a href="javascript:void();" data-role="delete" data-id="${user.userId}"><i class="glyphicon glyphicon-remove"></i>&nbsp; Delete </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -113,6 +87,15 @@
         </div><!-- content -->
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $(document).on('click','[data-role=delete]', function(){
+            $.post('/Admin/User/Delete',{id: $(this).attr('data-id')}, function(response){
+                console.log(response);
+            })
+        });
+    })
+</script>
 <!--footer-->
 </body>
 </html>

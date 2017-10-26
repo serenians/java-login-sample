@@ -39,39 +39,35 @@
         <div class="col-xs-12 col-sm-9 content">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="javascript:void(0);" class="toggle-sidebar"><span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel"></span></a> Add New User</h3>
+                    <h3 class="panel-title"><a href="javascript:void(0);" class="toggle-sidebar"><span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel"></span></a> Update User</h3>
                 </div>
                 <div class="panel-body">
                     <div class="content-row">
-                        <form method="post" action="/Admin/User/Create" role="form" class="form-horizontal">
+                        <form method="post" action="/Admin/User/Edit" role="form" class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Username</label>
                                 <div class="col-md-10">
-                                    <input type="text" required placeholder="User Name" id="UserName" class="form-control" name="UserName">
+                                    <input type="text" readonly placeholder="User Name" id="UserName" class="form-control" name="UserName" value="${User.username}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">First name</label>
                                 <div class="col-md-10">
-                                    <input type="text" required="" placeholder="First Name" id="FirstName" class="form-control" name="FirstName">
+                                    <input type="hidden" name="UserId" value="${User.userId}">
+                                    <input type="text" required="" placeholder="First Name" id="FirstName" class="form-control" name="FirstName" value="${User.firstName}">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Last name</label>
                                 <div class="col-md-10">
-                                    <input type="text" required="" placeholder="Last Name" id="LastName" class="form-control" name="LastName">
+                                    <input type="text" required="" placeholder="Last Name" id="LastName" class="form-control" name="LastName" value="${User.lastName}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">Password</label>
-                                <div class="col-md-10">
-                                    <input type="password" required="" placeholder="Password" id="Password" class="form-control" name="Password">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <button class="btn btn-info" type="submit">Submit</button>
+                                    <button class="btn btn-info" type="submit">Update</button>
                                 </div>
                             </div>
                         </form>

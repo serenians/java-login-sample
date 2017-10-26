@@ -71,11 +71,12 @@ public class UserService extends BaseService {
     }
     public ResponseObject<Object> AddUser(User user) throws SQLException, ClassNotFoundException {
         ResponseObject<Object> result =null;
-        PreparedStatement preparedStatement = context.getPreparedStatement("insert into user (username, password, firstname, lastname)values (?,?,?,?)");
+        PreparedStatement preparedStatement = context.getPreparedStatement("insert into user (username, password, firstname, lastname, active)values (?,?,?,?,?)");
         preparedStatement.setString(1,user.getUsername());
         preparedStatement.setString(2, user.getPassword());
         preparedStatement.setString(3,user.getFirstName());
         preparedStatement.setString(4, user.getLastName());
+        preparedStatement.setBoolean(5, true);
 
         int c = context.executeUpdate();
         if(c ==1)
@@ -87,5 +88,19 @@ public class UserService extends BaseService {
         }
         return result;
     }
+    public ResponseObject<Object> DeleteUser(int id) throws SQLException, ClassNotFoundException {
+        ResponseObject<Object> result = null;
 
+        String query = "delete  from user where userid='"+id+"'";
+        System.out.println(query);
+        int c = context.executeUpdate(query);
+
+        if(c==1) {
+            result = new ResponseObject<Object>(true, "User deleted successfully.", null);
+        }
+        else{
+            result = new ResponseObject<>(false,"User delete failed.");
+        }
+        return result;
+    }
 }

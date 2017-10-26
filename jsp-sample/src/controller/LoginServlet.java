@@ -22,13 +22,14 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
             LoginService loginService = new LoginService();
             ResponseObject<User> loginResult = loginService.Login(username, password);
             if(loginResult.getSuccess() && loginResult.getData() != null){
-                RequestDispatcher requestDispatcher =  request.getRequestDispatcher("index.jsp");
+//                RequestDispatcher requestDispatcher =  request.getRequestDispatcher("index.jsp");
                 request.setAttribute(ResponseMessageKey,"User Logged in successfully.");
                 User loggedInUser= loginResult.getData();
                 request.setAttribute(ResponseDataKey, loggedInUser);
                 request.getSession().setAttribute("loggedInUser",loggedInUser);
 
-                requestDispatcher.forward(request, response);
+                response.sendRedirect("/index.jsp");
+//                requestDispatcher.forward(request, response);
             }
             else{
                 request.setAttribute(ResponseMessageKey,"User log in failed.");

@@ -13,14 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "UserCreateServlet")
-public class UserCreateServlet extends HttpServlet {
-
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPut(req, resp);
-    }
-
+@WebServlet(name = "UserEditServlet")
+public class UserEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User loggedInUser =  (User) request.getSession().getAttribute("loggedInUser");
         if(loggedInUser ==null){
@@ -31,19 +25,20 @@ public class UserCreateServlet extends HttpServlet {
         else{
 
             User user = new User();
+            user.setUserId(Integer.parseInt(request.getParameter("UserId")));
             user.setUsername(request.getParameter("UserName"));
-            user.setPassword(request.getParameter("Password"));
             user.setFirstName(request.getParameter("FirstName"));
             user.setLastName(request.getParameter("LastName"));
 
             UserService userService = new UserService();
 
             try {
-                ResponseObject userSaveResponse = userService.AddUser(user);
+                ResponseObject userSaveResponse = userService.UpdateUser(user);
                 if(userSaveResponse.getSuccess()){
-                    request.setAttribute("Message","User added successfully.");
-                    RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/user/list.jsp");
-                    requestDispatcher.forward(request, response);
+                    request.setAttribute("Message","User updated successfully.");
+                    response.sendRedirect("/Admin/User/Get");
+//                    RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Admin/User/Get");
+//                    requestDispatcher.forward(request, response);
                 }
                 else{
 
@@ -64,8 +59,18 @@ public class UserCreateServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
         }
         else{
-
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/user/create.jsp");
+            int id = Integer.parseInt(request.getParameter("id"));
+            UserService userService = new UserService();
+            ResponseObject<User> user = null;
+            try {
+                user = userService.GetUserById(id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/user/edit.jsp");
+            request.setAttribute("User", user.getData());
             request.setAttribute("CurrentUser",loggedInUser);
             request.setAttribute("Message",  "");
             requestDispatcher.forward(request, response);
